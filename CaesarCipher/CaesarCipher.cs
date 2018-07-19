@@ -13,24 +13,21 @@ namespace CaesarCipher
             string message = "";
             foreach(char c in text)
             {
+                int asciiValueOfCharacter = (int)c;
+                asciiValueOfCharacter += shiftKey;
+                char intergerToCharacter;
                 if (((int)c >= (int)'a' && (int)c <= (int)'z'))
-                {
-
-                    int asciiValueOfCharacter = (int)c;
-                    asciiValueOfCharacter += shiftKey;
+                { 
                     if (asciiValueOfCharacter > (int)'z')
                         asciiValueOfCharacter -= 26;
-                    char intergerToCharacter = (char)asciiValueOfCharacter;
+                    intergerToCharacter = (char)asciiValueOfCharacter;
                     message += intergerToCharacter;
                 }
                 else if (((int)c >= (int)'A' && (int)c <= (int)'Z'))
-                {
-
-                    int asciiValueOfCharacter = (int)c;
-                    asciiValueOfCharacter += shiftKey;
+                { 
                     if (asciiValueOfCharacter > (int)'Z')
                         asciiValueOfCharacter -= 26;
-                    char intergerToCharacter = (char)asciiValueOfCharacter;
+                  intergerToCharacter = (char)asciiValueOfCharacter;
                     message += intergerToCharacter;
                 }
                 else message += c;
